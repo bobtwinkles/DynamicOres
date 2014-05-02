@@ -1,0 +1,16 @@
+[
+{
+  "modid": "DynOres",
+  "name": "Dynamic Ores",
+  "description": "Generates ore textures dynamically",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["bob_twinkles"],
+  "credits": "The Forge and FML guys for being awesome",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

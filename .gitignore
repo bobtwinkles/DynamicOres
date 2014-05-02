@@ -1,0 +1,14 @@
+build
+download
+/bin
+/out
+*.DS_Store
+.idea/
+Thumbs.db
+ForgeModLoader-client*
+gradle*
+forge*
+.gradle/
+.settings/
+eclipse/
+*.txt
