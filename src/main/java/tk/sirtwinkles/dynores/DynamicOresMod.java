@@ -3,6 +3,7 @@ package tk.sirtwinkles.dynores;
 import java.io.File;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
 import tk.sirtwinkles.dynores.blocks.BlockWalker;
 import tk.sirtwinkles.dynores.blocks.DeepDimPortalBlock;
@@ -26,12 +27,16 @@ public class DynamicOresMod {
     @SidedProxy(modId = DynamicOresMod.MODID, clientSide = "tk.sirtwinkles.dynores.ClientProxy", serverSide = "tk.sirtwinkles.dynores.ServerProxy")
     public static CommonProxy proxy;
 
-    public static DynOresDeepDimProvider provider;
     public static IWorldGenerator deepDimGenerator;
     
-    @RegisterBlock(unlocalizedName = "dynores.portal", name="dynores_portal", textureName="dynores_portal")
+    public static CreativeTabs dynoresCreativeTab;
+
+    //Blocks
+    @RegisterBlock(unlocalizedName = "dynores.portal", name = "dynores_portal", textureName = "dynores_portal")
     public static Block portal = new DeepDimPortalBlock();
 
+    // -- end blocks --
+    
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit();
