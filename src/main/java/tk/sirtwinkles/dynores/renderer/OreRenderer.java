@@ -55,7 +55,7 @@ public class OreRenderer implements ISimpleBlockRenderingHandler {
         } else {
             IIcon stone = proxy.terrain.getAtlasSprite("stone");
             renderer.setOverrideBlockTexture(stone);
-            renderer.renderStandardBlock(below, x, y, z);
+            renderer.renderStandardBlock(block, x, y, z);
         }
         renderer.setOverrideBlockTexture(blockIcon);
         renderer.renderStandardBlock(block, x, y, z);
