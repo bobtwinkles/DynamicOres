@@ -52,7 +52,7 @@ public class ClientProxy extends CommonProxy {
         hasStiched = false;
         hasInjected = false;
 
-        Configuration config = new Configuration(new File(Loader.instance().getConfigDir(), "DynamicOres.cfg"));
+        Configuration config = new Configuration(new File(Loader.instance().getConfigDir(), "DynamicOresClient.cfg"));
         whiteList = Sets.newHashSet(config.get("validBackings", "values",
                 new String[] { "minecraft:stone", "minecraft:gravel", "minecraft:cobblestone" }).getStringList());
         
