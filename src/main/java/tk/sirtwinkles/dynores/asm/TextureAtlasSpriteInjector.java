@@ -50,7 +50,6 @@ public class TextureAtlasSpriteInjector implements IInjector {
 
     public static boolean shouldClearList(String label) {
         ClientProxy proxy = (ClientProxy) DynamicOresMod.proxy;
-        log.info("Asked about texture {}", label);
         if (label.equals("stone")) {
             log.info("Prevented deleteion of metadata for texture {}", label);
             return false;
