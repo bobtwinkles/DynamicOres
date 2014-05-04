@@ -1,29 +1,22 @@
 package tk.sirtwinkles.dynores;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.oredict.OreDictionary;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 
 import tk.sirtwinkles.dynores.renderer.MaskAtlasSprite;
 import tk.sirtwinkles.dynores.renderer.OreRenderer;
 
-import com.google.common.base.Throwables;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
@@ -55,12 +48,13 @@ public class ClientProxy extends CommonProxy {
         Configuration config = new Configuration(new File(Loader.instance().getConfigDir(), "DynamicOresClient.cfg"));
         whiteList = Sets.newHashSet(config.get("validBackings", "values",
                 new String[] { "minecraft:stone", "minecraft:gravel", "minecraft:cobblestone" }).getStringList());
-        
-        knownOres = Sets.newHashSet(config.get("validOres", "values",
-                new String[] {
-                    "minecraft:iron_ore", "minecraft:coal_ore", "minecraft:diamond_ore", "minecraft:lapis_ore", "minecraft:gold_ore"
-                }).getStringList());
-        
+
+        knownOres = Sets.newHashSet(config.get(
+                "validOres",
+                "values",
+                new String[] { "minecraft:iron_ore", "minecraft:coal_ore", "minecraft:diamond_ore",
+                        "minecraft:lapis_ore", "minecraft:gold_ore" }).getStringList());
+
         config.save();
     }
 

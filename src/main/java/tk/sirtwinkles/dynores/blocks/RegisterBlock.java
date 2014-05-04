@@ -8,9 +8,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RegisterBlock {
-	public String unlocalizedName();
+    public String unlocalizedName();
 
-	public String textureName();
+    public String textureName();
 
-	public String name();
+    public String name();
 }

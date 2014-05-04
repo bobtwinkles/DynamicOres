@@ -1,14 +1,11 @@
 package tk.sirtwinkles.dynores.blocks;
 
-import tk.sirtwinkles.dynores.DynamicOresMod;
-import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import tk.sirtwinkles.dynores.DynamicOresMod;
 
 public class DeepDimPortalBlock extends Block {
 

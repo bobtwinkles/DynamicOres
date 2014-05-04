@@ -1,17 +1,17 @@
 package tk.sirtwinkles.dynores.blocks;
 
+import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
+import net.minecraft.block.Block;
+import net.minecraftforge.common.config.Configuration;
 import tk.sirtwinkles.dynores.DynamicOresMod;
 
 import com.google.common.base.Throwables;
 
-import cpw.mods.fml.common.registry.GameData;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraftforge.common.config.Configuration;
-import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
 
 public class BlockWalker {
     public static void walkClass(Class c, Configuration cfg) {

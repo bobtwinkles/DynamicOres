@@ -10,9 +10,6 @@ import org.lwjgl.opengl.GL11;
 
 import tk.sirtwinkles.dynores.ClientProxy;
 import tk.sirtwinkles.dynores.DynamicOresMod;
-
-import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
-
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.GameData;

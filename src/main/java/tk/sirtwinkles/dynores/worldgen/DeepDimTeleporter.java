@@ -18,7 +18,7 @@ public class DeepDimTeleporter extends Teleporter {
         log.info("Asked to place an entity in a portal <3");
         super.placeInPortal(par1Entity, par2, par4, par6, par8);
     }
-    
+
     @Override
     public boolean makePortal(Entity par1Entity) {
         log.info("Asked to make a poral <3");
