@@ -20,12 +20,14 @@ public class DeepDimPortalBlock extends Block {
 
     @Override
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity collidee) {
-        if (collidee.dimension != DynamicOresMod.dimId && collidee.timeUntilPortal <= 0 && !world.isRemote) {
-            collidee.travelToDimension(DynamicOresMod.dimId);
-            collidee.timeUntilPortal = 10;
-        } else {
-            collidee.travelToDimension(0);
-            collidee.timeUntilPortal = 10;
+        if (!world.isRemote) {
+            if (collidee.dimension != DynamicOresMod.dimId && collidee.timeUntilPortal <= 0) {
+                collidee.travelToDimension(DynamicOresMod.dimId);
+                collidee.timeUntilPortal = 10;
+            } else {
+                collidee.travelToDimension(0);
+                collidee.timeUntilPortal = 10;
+            }
         }
     }
 }
