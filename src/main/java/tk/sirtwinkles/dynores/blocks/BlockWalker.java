@@ -29,7 +29,7 @@ public class BlockWalker {
                     b.setBlockTextureName("dynores:" + registerBlock.textureName());
                     b.setCreativeTab(DynamicOresMod.dynoresCreativeTab);
                     GameRegistry.registerBlock(b, registerBlock.name());
-                    log.info("Registered block {} with unlocalized name {} and texture {}", registerBlock.name(),
+                    log.info("Registered block {} with unlocalized name {} and tex ture {}", registerBlock.name(),
                             registerBlock.unlocalizedName(), registerBlock.textureName());
                 } else {
                     log.warn(
