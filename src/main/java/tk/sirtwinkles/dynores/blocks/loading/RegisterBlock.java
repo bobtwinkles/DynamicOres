@@ -1,4 +1,4 @@
-package tk.sirtwinkles.dynores.blocks;
+package tk.sirtwinkles.dynores.blocks.loading;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

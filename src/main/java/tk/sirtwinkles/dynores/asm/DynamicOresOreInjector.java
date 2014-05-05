@@ -1,4 +1,4 @@
-package tk.sirtwinkles.dynores.blocks;
+package tk.sirtwinkles.dynores.asm;
 
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
@@ -9,7 +9,6 @@ import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 
 import tk.sirtwinkles.dynores.DynamicOresPlugin;
-import tk.sirtwinkles.dynores.asm.IInjector;
 import tk.sirtwinkles.dynores.renderer.OreRenderer;
 
 public class DynamicOresOreInjector implements IInjector {

@@ -8,10 +8,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import tk.sirtwinkles.dynores.asm.DynOresTransformer;
+import tk.sirtwinkles.dynores.asm.DynamicOresOreInjector;
 import tk.sirtwinkles.dynores.asm.IInjector;
 import tk.sirtwinkles.dynores.asm.TextureAtlasSpriteInjector;
 import tk.sirtwinkles.dynores.asm.Transformer;
-import tk.sirtwinkles.dynores.blocks.DynamicOresOreInjector;
 
 import com.google.common.base.Throwables;
 

@@ -1,4 +1,4 @@
-package tk.sirtwinkles.dynores.blocks;
+package tk.sirtwinkles.dynores.blocks.loading;
 
 import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
 
