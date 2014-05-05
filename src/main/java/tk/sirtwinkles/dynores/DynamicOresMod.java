@@ -10,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import tk.sirtwinkles.dynores.blocks.DeepDimPortalBlock;
+import tk.sirtwinkles.dynores.blocks.ElevatorCore;
 import tk.sirtwinkles.dynores.blocks.ElevatorRail;
 import tk.sirtwinkles.dynores.blocks.loading.BlockWalker;
 import tk.sirtwinkles.dynores.blocks.loading.RegisterBlock;
@@ -46,6 +47,9 @@ public class DynamicOresMod {
     
     @RegisterBlock(unlocalizedName = "dynores.elevator.rail", name = "dynores_elevator_rail", textureName = "dynores_elevator_rail")
     public static Block elevatorRail = new ElevatorRail();
+    
+    @RegisterBlock(unlocalizedName = "dynores.elevator.core", name = "dynores_elevator_core", textureName = "dynores_elevator_core")
+    public static Block elevatorCore = new ElevatorCore();
 
     // -- end blocks --
 

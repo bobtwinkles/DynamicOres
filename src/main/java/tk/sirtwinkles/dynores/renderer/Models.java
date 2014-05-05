@@ -1,6 +1,10 @@
 package tk.sirtwinkles.dynores.renderer;
 
+import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
+
 import java.io.IOException;
+
+import com.google.common.base.Throwables;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.SimpleTexture;
@@ -13,7 +17,7 @@ import tk.sirtwinkles.dynores.DynamicOresMod;
 public class Models {
     private static final String modid = DynamicOresMod.MODID.toLowerCase();
     private static final String modelBase = "models/";
-    private static final String textureBase = "textures/models";
+    private static final String textureBase = "textures/models/";
     
     public static final ModelLocation ELEVATOR_RAILS = new ModelLocation("elevator_rails");
     
@@ -35,7 +39,8 @@ public class Models {
             try {
                 loadTexture.loadTexture(minecraft.getResourceManager());
                 texture = loadTexture.getGlTextureId();
-            } catch (IOException e) { 
+            } catch (IOException e) {
+                log.error("Failed to load texture", e);
                 texture = TextureUtil.missingTexture.getGlTextureId();
             }
         }

@@ -10,11 +10,6 @@ public class ElevatorRail extends Block {
     }
     
     @Override
-    public int getRenderType() {
-        return ElevatorRenderer.RENDERER.getRenderId();
-    }
-    
-    @Override
     public boolean isOpaqueCube() {
         return false;
     }

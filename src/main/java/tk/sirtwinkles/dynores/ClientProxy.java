@@ -7,6 +7,7 @@ import java.util.Set;
 
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,10 +19,12 @@ import tk.sirtwinkles.dynores.blocks.ElevatorRail;
 import tk.sirtwinkles.dynores.renderer.ElevatorRenderer;
 import tk.sirtwinkles.dynores.renderer.MaskAtlasSprite;
 import tk.sirtwinkles.dynores.renderer.OreRenderer;
+import tk.sirtwinkles.dynores.tileentity.DimensionalElevator;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -63,7 +66,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init() {
         RenderingRegistry.registerBlockHandler(OreRenderer.RENDERER);
-        RenderingRegistry.registerBlockHandler(ElevatorRenderer.RENDERER);
+        
+        ClientRegistry.bindTileEntitySpecialRenderer(DimensionalElevator.class, ElevatorRenderer.RENDERER);
     }
 
     @Override
