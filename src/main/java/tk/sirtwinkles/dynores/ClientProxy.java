@@ -14,6 +14,8 @@ import net.minecraftforge.common.config.Configuration;
 
 import org.apache.logging.log4j.Logger;
 
+import tk.sirtwinkles.dynores.blocks.ElevatorRail;
+import tk.sirtwinkles.dynores.renderer.ElevatorRenderer;
 import tk.sirtwinkles.dynores.renderer.MaskAtlasSprite;
 import tk.sirtwinkles.dynores.renderer.OreRenderer;
 
@@ -61,6 +63,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init() {
         RenderingRegistry.registerBlockHandler(OreRenderer.RENDERER);
+        RenderingRegistry.registerBlockHandler(ElevatorRenderer.RENDERER);
     }
 
     @Override

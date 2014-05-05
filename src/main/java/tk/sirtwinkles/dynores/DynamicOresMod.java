@@ -11,6 +11,7 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import tk.sirtwinkles.dynores.blocks.BlockWalker;
 import tk.sirtwinkles.dynores.blocks.DeepDimPortalBlock;
+import tk.sirtwinkles.dynores.blocks.ElevatorRail;
 import tk.sirtwinkles.dynores.blocks.RegisterBlock;
 import tk.sirtwinkles.dynores.worldgen.DeepDimProvider;
 import tk.sirtwinkles.dynores.worldgen.DeepDimTeleportReplacer;
@@ -42,6 +43,9 @@ public class DynamicOresMod {
     // Blocks
     @RegisterBlock(unlocalizedName = "dynores.portal", name = "dynores_portal", textureName = "dynores_portal")
     public static Block portal = new DeepDimPortalBlock();
+    
+    @RegisterBlock(unlocalizedName = "dynores.elevator.rail", name = "dynores_elevator_rail", textureName = "dynores_elevator_rail")
+    public static Block elevatorRail = new ElevatorRail();
 
     // -- end blocks --
 
