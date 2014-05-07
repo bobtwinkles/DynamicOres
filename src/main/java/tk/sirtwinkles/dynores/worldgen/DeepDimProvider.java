@@ -2,8 +2,9 @@ package tk.sirtwinkles.dynores.worldgen;
 
 import static tk.sirtwinkles.dynores.DynamicOresPlugin.log;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.WorldChunkManagerHell;
+import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
 import tk.sirtwinkles.dynores.DynamicOresMod;
 
@@ -14,7 +15,7 @@ public class DeepDimProvider extends WorldProvider {
 
     @Override
     protected void registerWorldChunkManager() {
-        this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.desertHills, 0.1f);
+        this.worldChunkMgr = new WorldChunkManager(this.worldObj.getSeed(), WorldType.DEFAULT);
         this.dimensionId = DynamicOresMod.dimId;
     }
 

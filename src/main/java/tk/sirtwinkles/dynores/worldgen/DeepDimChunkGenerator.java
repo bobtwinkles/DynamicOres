@@ -3,8 +3,6 @@ package tk.sirtwinkles.dynores.worldgen;
 import java.util.List;
 import java.util.Random;
 
-import com.google.common.collect.Lists;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
@@ -14,11 +12,12 @@ import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.MapGenCaves;
 
+import com.google.common.collect.Lists;
+
 public class DeepDimChunkGenerator implements IChunkProvider {
-    
+
     private World world;
     private long seed;
     private Random rand;
@@ -39,11 +38,20 @@ public class DeepDimChunkGenerator implements IChunkProvider {
 
     @Override
     public Chunk provideChunk(int chunkX, int chunkZ) {
-        this.rand.setSeed((long)chunkX * 341873128712L + (long)chunkZ * 132897987541L);
+        this.rand.setSeed((long) chunkX * 341873128712L + (long) chunkZ * 132897987541L);
         Block[] blocks = new Block[65536];
         byte[] bytes = new byte[65536];
         for (int i = 0; i < blocks.length; ++i) {
-            blocks[i] = Blocks.stone;
+            int y = i % 256;
+            int x = i >> 12;
+            int z = i >> 8;
+            if (y == 0 || y == 255) {
+                blocks[i] = Blocks.bedrock;
+            } else if (x == 0 && z == 0) {
+                blocks[i] = Blocks.air;
+            } else {
+                blocks[i] = Blocks.stone;
+            }
         }
         this.caves.func_151539_a(this, this.world, chunkX, chunkZ, blocks);
         Chunk tr = new Chunk(this.world, blocks, bytes, chunkX, chunkZ);
@@ -60,7 +68,7 @@ public class DeepDimChunkGenerator implements IChunkProvider {
     @Override
     public void populate(IChunkProvider chunkProvider, int chunkX, int chunkY) {
         BlockFalling.fallInstantly = true;
-        
+
         BlockFalling.fallInstantly = false;
     }
 
@@ -106,5 +114,5 @@ public class DeepDimChunkGenerator implements IChunkProvider {
     @Override
     public void saveExtraData() {
     }
-    
+
 }
