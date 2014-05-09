@@ -63,7 +63,7 @@ public class DynamicOresMod {
     public void init(FMLInitializationEvent event) {
         Configuration c = new Configuration(new File(Loader.instance().getConfigDir(), "DynamicOres.cfg"));
 
-        Property dimId = c.get("dimmension", "dimId", DimensionManager.getNextFreeDimId());
+        Property dimId = c.get("dimmension", "dimId", DeepDimProvider.findNextWorldId());
         dimId.comment = "The dimmension id of our dimmension";
         Property providerId = c.get("dimmension", "providerId", dimId.getInt());
         providerId.comment = "The ID of our world provider. Do not change unless you know what you are doing";

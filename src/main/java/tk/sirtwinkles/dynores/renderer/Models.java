@@ -20,6 +20,7 @@ public class Models {
     private static final String textureBase = "textures/models/";
     
     public static final ModelLocation ELEVATOR_RAILS = new ModelLocation("elevator_rails");
+    public static final ModelLocation PUNCHTHROUGH = new ModelLocation("break_through");
     
     public static class ModelLocation {
         public ResourceLocation textureLocation;

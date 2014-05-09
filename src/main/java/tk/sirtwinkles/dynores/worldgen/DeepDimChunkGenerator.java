@@ -32,7 +32,6 @@ public class DeepDimChunkGenerator implements IChunkProvider {
 
     @Override
     public boolean chunkExists(int var1, int var2) {
-        // TODO Auto-generated method stub
         return false;
     }
 
@@ -43,8 +42,8 @@ public class DeepDimChunkGenerator implements IChunkProvider {
         byte[] bytes = new byte[65536];
         for (int i = 0; i < blocks.length; ++i) {
             int y = i % 256;
-            int x = i >> 12;
-            int z = i >> 8;
+            int x = (i >> 12) & 0xF;
+            int z = (i >> 8) & 0xF;
             if (y == 0 || y == 255) {
                 blocks[i] = Blocks.bedrock;
             } else if (x == 0 && z == 0) {
